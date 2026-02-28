@@ -1,0 +1,10 @@
+export { DetailsCast } from './DetailsCast';
+export { DetailsCredits } from './DetailsCredits';
+export { DetailsGenres } from './DetailsGenres';
+export { DetailsHeader } from './DetailsHeader';
+export { DetailsHero } from './DetailsHero';
+export { DetailsMetadata } from './DetailsMetadata';
+export { DetailsPoster } from './DetailsPoster';
+export { DetailsSynopsis } from './DetailsSynopsis';
+export { DetailsTrailer } from './DetailsTrailer';
+export { DetailsWatchProviders } from './DetailsWatchProviders';
