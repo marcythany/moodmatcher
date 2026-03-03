@@ -5,6 +5,7 @@ export interface Title {
 	id: string; // ID único composto (ex: "tmdb-movie-123")
 	tmdbId?: number;
 	jikanId?: number;
+	anilistId?: number;
 	tvmazeId?: number;
 	title: string;
 	overview: string; // Descrição curta
@@ -28,6 +29,7 @@ export interface TitleDetails extends Title {
 	cast: CastMember[]; // Elenco principal
 	director?: string; // Diretor (para filmes)
 	creators?: string[]; // Criadores (para séries)
+	anilistRating?: number;
 	studio?: string; // Estúdio (para animes)
 	numberOfEpisodes?: number; // Para séries e animes
 	numberOfSeasons?: number; // Para séries

@@ -1,5 +1,5 @@
 import { TitleGrid } from '@/components/mood/TitleGrid';
-import { getAnimeByGenre } from '@/lib/apis/jikan';
+import { getAnimeByGenre } from '@/lib/apis/anilist'; // ← import alterado
 import { getMoviesByGenre } from '@/lib/apis/tmdb';
 import { getSeriesByGenre } from '@/lib/apis/tvmaze';
 import { getMoodBySlug, moodToGenreMap } from '@/lib/utils/moodMappings';
@@ -21,7 +21,7 @@ export default async function MoodPage({ params }: PageProps) {
 
 	const [movies, animes, series] = await Promise.all([
 		getMoviesByGenre(genres.tmdb),
-		getAnimeByGenre(genres.jikan),
+		getAnimeByGenre(genres.anilist),
 		getSeriesByGenre(genres.tvmaze),
 	]);
 

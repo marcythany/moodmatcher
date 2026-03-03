@@ -1,13 +1,11 @@
-// lib/utils/moodMappings.ts
-
 /**
- * Mapeamento de humores para gêneros nas APIs TMDB, Jikan (MyAnimeList) e TVMaze.
+ * Mapeamento de humores para gêneros nas APIs TMDB, AniList e TVMaze.
  * Cada humor possui um slug (usado na URL), um nome amigável e as listas de gêneros correspondentes.
  */
 
 export interface MoodGenreMap {
 	tmdb: number[]; // IDs de gênero do TMDB
-	jikan: number[]; // IDs de gênero da Jikan (MyAnimeList)
+	anilist: string[]; // Nomes de gênero da AniList
 	tvmaze: string[]; // Nomes de gênero da TVMaze
 }
 
@@ -15,7 +13,7 @@ export interface MoodMetadata {
 	slug: string; // identificador para URL (ex: "divertido")
 	label: string; // nome em português para exibição
 	emoji: string; // ícone/emoji representativo
-	color: string; // cor temática (classe Tailwind ou código hexadecimal)
+	color: string; // cor temática (classe Tailwind)
 	genres: MoodGenreMap;
 }
 
@@ -27,7 +25,7 @@ export const moodMappings: MoodMetadata[] = [
 		color: 'amber-400',
 		genres: {
 			tmdb: [35], // Comédia
-			jikan: [4], // Comedy
+			anilist: ['Comedy'],
 			tvmaze: ['Comedy'],
 		},
 	},
@@ -38,7 +36,7 @@ export const moodMappings: MoodMetadata[] = [
 		color: 'blue-400',
 		genres: {
 			tmdb: [18, 53], // Drama, Thriller
-			jikan: [8, 41], // Drama, Suspense
+			anilist: ['Drama', 'Thriller'],
 			tvmaze: ['Drama', 'Thriller'],
 		},
 	},
@@ -49,7 +47,7 @@ export const moodMappings: MoodMetadata[] = [
 		color: 'purple-400',
 		genres: {
 			tmdb: [18, 9648], // Drama, Mistério
-			jikan: [8, 7, 40], // Drama, Mystery, Psychological
+			anilist: ['Drama', 'Mystery'],
 			tvmaze: ['Drama', 'Mystery'],
 		},
 	},
@@ -60,7 +58,7 @@ export const moodMappings: MoodMetadata[] = [
 		color: 'green-300',
 		genres: {
 			tmdb: [10751, 16], // Família, Animação
-			jikan: [15, 36], // Kids, Slice of Life
+			anilist: ['Slice of Life', 'Comedy'],
 			tvmaze: ['Family', 'Animation'],
 		},
 	},
@@ -71,7 +69,7 @@ export const moodMappings: MoodMetadata[] = [
 		color: 'red-500',
 		genres: {
 			tmdb: [28, 12], // Ação, Aventura
-			jikan: [1, 2], // Action, Adventure
+			anilist: ['Action', 'Adventure'],
 			tvmaze: ['Action', 'Adventure'],
 		},
 	},
@@ -82,7 +80,7 @@ export const moodMappings: MoodMetadata[] = [
 		color: 'pink-400',
 		genres: {
 			tmdb: [10749], // Romance
-			jikan: [22], // Romance
+			anilist: ['Romance'],
 			tvmaze: ['Romance'],
 		},
 	},
@@ -93,7 +91,7 @@ export const moodMappings: MoodMetadata[] = [
 		color: 'gray-700',
 		genres: {
 			tmdb: [27, 80, 53], // Terror, Crime, Thriller
-			jikan: [14, 39, 41], // Horror, Police, Suspense
+			anilist: ['Horror', 'Thriller'],
 			tvmaze: ['Horror', 'Crime', 'Thriller'],
 		},
 	},
@@ -104,7 +102,7 @@ export const moodMappings: MoodMetadata[] = [
 		color: 'yellow-400',
 		genres: {
 			tmdb: [18, 36, 10751], // Drama, História, Família
-			jikan: [8, 13, 46], // Drama, Historical, Award Winning
+			anilist: ['Drama', 'Fantasy'],
 			tvmaze: ['Drama', 'History', 'Family'],
 		},
 	},
@@ -115,7 +113,7 @@ export const moodMappings: MoodMetadata[] = [
 		color: 'indigo-400',
 		genres: {
 			tmdb: [14, 878], // Fantasia, Ficção científica
-			jikan: [10, 24], // Fantasy, Sci-Fi
+			anilist: ['Fantasy', 'Sci-Fi'],
 			tvmaze: ['Fantasy', 'Science-Fiction'],
 		},
 	},
@@ -126,7 +124,7 @@ export const moodMappings: MoodMetadata[] = [
 		color: 'orange-300',
 		genres: {
 			tmdb: [12, 10751, 35], // Aventura, Família, Comédia (clássicos)
-			jikan: [2, 15, 4], // Adventure, Kids, Comedy
+			anilist: ['Adventure', 'Comedy'],
 			tvmaze: ['Adventure', 'Family', 'Comedy'],
 		},
 	},
@@ -137,7 +135,7 @@ export const moodMappings: MoodMetadata[] = [
 		color: 'teal-400',
 		genres: {
 			tmdb: [9648, 53], // Mistério, Thriller
-			jikan: [7, 41], // Mystery, Suspense
+			anilist: ['Mystery', 'Thriller'],
 			tvmaze: ['Mystery', 'Thriller'],
 		},
 	},
@@ -148,7 +146,7 @@ export const moodMappings: MoodMetadata[] = [
 		color: 'lime-400',
 		genres: {
 			tmdb: [28, 10402], // Ação, Música
-			jikan: [1, 30, 19], // Action, Sports, Music
+			anilist: ['Action', 'Sports'],
 			tvmaze: ['Action', 'Sports', 'Music'],
 		},
 	},
