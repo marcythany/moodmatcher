@@ -1,3 +1,5 @@
+// lib/utils/moodMappings.ts
+
 /**
  * Mapeamento de humores para gêneros nas APIs TMDB, AniList e TVMaze.
  * Cada humor possui um slug (usado na URL), um nome amigável e as listas de gêneros correspondentes.
@@ -5,8 +7,8 @@
 
 export interface MoodGenreMap {
 	tmdb: number[]; // IDs de gênero do TMDB
-	anilist: string[]; // Nomes de gênero da AniList
-	tvmaze: string[]; // Nomes de gênero da TVMaze
+	anilist: string[]; // Nomes de gênero do AniList (em inglês, conforme a API)
+	tvmaze: string[]; // Nomes de gênero da TVMaze (em inglês)
 }
 
 export interface MoodMetadata {
@@ -91,7 +93,7 @@ export const moodMappings: MoodMetadata[] = [
 		color: 'gray-700',
 		genres: {
 			tmdb: [27, 80, 53], // Terror, Crime, Thriller
-			anilist: ['Horror', 'Thriller'],
+			anilist: ['Horror', 'Thriller'], // Crime não é gênero no AniList
 			tvmaze: ['Horror', 'Crime', 'Thriller'],
 		},
 	},
@@ -102,7 +104,7 @@ export const moodMappings: MoodMetadata[] = [
 		color: 'yellow-400',
 		genres: {
 			tmdb: [18, 36, 10751], // Drama, História, Família
-			anilist: ['Drama', 'Fantasy'],
+			anilist: ['Drama', 'Adventure', 'Fantasy'], // Ajuste para algo inspirador
 			tvmaze: ['Drama', 'History', 'Family'],
 		},
 	},
@@ -123,7 +125,7 @@ export const moodMappings: MoodMetadata[] = [
 		emoji: '📺',
 		color: 'orange-300',
 		genres: {
-			tmdb: [12, 10751, 35], // Aventura, Família, Comédia (clássicos)
+			tmdb: [12, 10751, 35], // Aventura, Família, Comédia
 			anilist: ['Adventure', 'Comedy'],
 			tvmaze: ['Adventure', 'Family', 'Comedy'],
 		},
@@ -146,7 +148,7 @@ export const moodMappings: MoodMetadata[] = [
 		color: 'lime-400',
 		genres: {
 			tmdb: [28, 10402], // Ação, Música
-			anilist: ['Action', 'Sports'],
+			anilist: ['Action', 'Music', 'Sports'],
 			tvmaze: ['Action', 'Sports', 'Music'],
 		},
 	},
